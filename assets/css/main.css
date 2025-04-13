@@ -5,3 +5,7 @@
 	--font-sans: "Anton", sans-serif;
 	--font-secondary: "Imprima";
 }
+
+:root {
+	--ui-primary: #6330c1;
+}
