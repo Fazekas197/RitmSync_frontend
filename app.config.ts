@@ -5,5 +5,10 @@ export default defineAppConfig({
 				base: "font-secondary",
 			},
 		},
+		link: {
+			variants: {
+				active: { false: "text-black" },
+			},
+		},
 	},
 });
