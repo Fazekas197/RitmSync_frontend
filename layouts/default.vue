@@ -13,5 +13,7 @@
 			</div>
 		</div>
 	</header>
-	<slot></slot>
+	<div class="px-8 py-7 flex gap-y-4 flex-col">
+		<slot></slot>
+	</div>
 </template>
