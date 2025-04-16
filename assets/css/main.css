@@ -4,8 +4,11 @@
 @theme {
 	--font-sans: "Anton", sans-serif;
 	--font-secondary: "Imprima";
+	--color-primary: #6330c1;
 }
 
 :root {
-	--ui-primary: #6330c1;
+	--ui-primary: var(--color-primary);
+	--ui-text-muted: white;
+	--ui-text: black;
 }
