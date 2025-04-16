@@ -1,6 +1,6 @@
 <template>
 	<header
-		class="flex justify-between items-center px-8 py-5 border-b-2 border-black/25"
+		class="bg-white flex justify-between items-center fixed w-full top-0 px-8 py-5 border-b-2 border-black/25"
 	>
 		<h1 class="text-2xl">Ritm Sync</h1>
 		<div>
@@ -12,7 +12,7 @@
 		</div>
 	</header>
 
-	<div class="px-8 py-7 pb-36 flex gap-y-4 flex-col">
+	<div class="px-8 py-7 pb-36 pt-32 flex gap-y-4 flex-col">
 		<slot></slot>
 	</div>
 
