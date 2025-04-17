@@ -58,7 +58,7 @@
 			</p>
 		</div>
 
-		<UButton class="w-fit" size="xl">Mai multe</UButton>
+		<UButton to="/postari/test" class="w-fit" size="xl">Mai multe</UButton>
 	</div>
 </template>
 
