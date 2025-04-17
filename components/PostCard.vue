@@ -8,6 +8,13 @@
 			<!-- DETAILS -->
 			<!-- Instrument, Gen -->
 			<div class="flex gap-x-2 items-center text-white/75">
+				<div v-if="musician" class="flex gap-x-1 items-center">
+					<UIcon
+						name="i-material-symbols-light:location-on"
+						class="size-5"
+					/>
+					<h4>Locatie</h4>
+				</div>
 				<div class="flex gap-x-1 items-center">
 					<UIcon
 						name="i-qlementine-icons:guitar-strat-16"
@@ -22,7 +29,7 @@
 			</div>
 
 			<!-- locatie, autor, data -->
-			<div class="flex gap-x-2 text-white/75">
+			<div v-if="!musician" class="flex gap-x-2 text-white/75">
 				<div class="flex gap-x-1 items-center">
 					<UIcon
 						name="i-material-symbols-light:location-on"
@@ -54,3 +61,7 @@
 		<UButton class="w-fit" size="xl">Mai multe</UButton>
 	</div>
 </template>
+
+<script setup lang="ts">
+	const props = defineProps(["musician"]);
+</script>
