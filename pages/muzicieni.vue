@@ -1,6 +1,6 @@
 <template>
 	<div class="flex flex-col gap-y-2">
-		<h1 class="text-4xl">Colaborări</h1>
+		<h1 class="text-4xl">Muzicieni</h1>
 		<div class="flex gap-x-2">
 			<div
 				class="flex items-center gap-x-1 border-2 rounded-xl border-primary px-3 py-1"
@@ -16,5 +16,5 @@
 			</div>
 		</div>
 	</div>
-	<PostCard />
+	<PostCard musician="true" />
 </template>
