@@ -12,7 +12,7 @@
 		</div>
 	</header>
 
-	<div class="px-8 py-7 pb-36 pt-32 flex gap-y-4 flex-col">
+	<div class="px-8 py-7 pb-32 pt-28 flex gap-y-4 flex-col">
 		<slot></slot>
 	</div>
 
