@@ -58,7 +58,12 @@
 			</p>
 		</div>
 
-		<UButton to="/postari/test" class="w-fit" size="xl">Mai multe</UButton>
+		<UButton v-if="!musician" to="/postari/test" class="w-fit" size="xl"
+			>Mai multe</UButton
+		>
+		<UButton v-if="musician" to="/muzicieni/test" class="w-fit" size="xl"
+			>Mai multe</UButton
+		>
 	</div>
 </template>
 
