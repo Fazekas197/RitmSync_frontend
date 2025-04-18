@@ -1,6 +1,6 @@
 <template>
 	<header
-		class="bg-white flex justify-between items-center fixed w-full top-0 px-8 py-5 border-b-2 border-black/25"
+		class="z-50 bg-white flex justify-between items-center fixed w-full top-0 px-8 py-5 border-b-2 border-black/25"
 	>
 		<h1 class="text-2xl font-[Tiny5]">RTMSNC</h1>
 		<div>
