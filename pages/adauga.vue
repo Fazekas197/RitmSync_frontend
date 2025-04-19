@@ -7,14 +7,23 @@
 			</UFormField>
 			<div class="flex gap-x-3">
 				<UFormField label="Județ" required class="w-full">
-					<USelectMenu highlight class="w-full" />
+					<USelectMenu :items="items" highlight class="w-full" />
 				</UFormField>
-				<UFormField label="Instrumente" required class="w-full">
-					<USelectMenu multiple highlight class="w-full" />
+				<UFormField
+					label="Instrumente"
+					required
+					class="w-full max-w-1/2"
+				>
+					<USelectMenu
+						:items="items"
+						multiple
+						highlight
+						class="w-full"
+					/>
 				</UFormField>
 			</div>
 			<UFormField label="Genuri muzicale" required>
-				<USelectMenu multiple highlight class="w-full" />
+				<USelectMenu :items="items" multiple highlight class="w-full" />
 			</UFormField>
 			<UFormField label="Descriere" required>
 				<UTextarea class="w-full" highlight :rows="10" />
@@ -36,4 +45,6 @@
 	</div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+	const items = ref(["Backlog", "Todo", "In Progress", "Done"]);
+</script>
