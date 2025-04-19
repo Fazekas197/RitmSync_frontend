@@ -6,7 +6,7 @@
 			class="bg-gradient-to-br from-[#2e2e2e] to-[#121212] size-28 text-7xl"
 		/>
 		<h1 class="text-4xl">Nume Prenume</h1>
-		<div class="flex gap-x-3">
+		<div class="space-x-3">
 			<UIcon
 				name="i-si:youtube-fill"
 				class="size-8 bg-gradient-to-br from-[#2e2e2e] to-[#121212]"

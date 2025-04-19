@@ -1,7 +1,7 @@
 <template>
 	<Header />
 
-	<div class="px-8 py-7 pb-32 pt-28 flex gap-y-4 flex-col">
+	<div class="px-8 py-7 pb-32 pt-28 space-y-4">
 		<slot></slot>
 	</div>
 

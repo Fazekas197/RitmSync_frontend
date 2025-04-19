@@ -1,9 +1,9 @@
 <template>
 	<div
-		class="px-8 py-6 rounded-2xl bg-gradient-to-br from-[#2e2e2e] to-[#121212] text-white flex flex-col gap-y-3"
+		class="px-8 py-6 rounded-2xl bg-gradient-to-br from-[#2e2e2e] to-[#121212] text-white space-y-3"
 	>
 		<!-- TOP -->
-		<div class="flex flex-col gap-y-1">
+		<div class="space-y-1">
 			<h2 class="text-2xl">Titlu</h2>
 			<!-- DETAILS -->
 			<!-- Instrument, Gen -->
@@ -22,7 +22,7 @@
 					/>
 					<h4>Instrument</h4>
 				</div>
-				<div class="flex gap-1 items-center">
+				<div class="flex gap-x-1 items-center">
 					<UIcon name="i-majesticons:music" class="size-5" />
 					<h4>Gen</h4>
 				</div>

@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col gap-y-2">
+	<div class="space-y-2">
 		<h1 class="text-4xl">Muzicieni</h1>
 		<div class="flex gap-x-2">
 			<div

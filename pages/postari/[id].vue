@@ -1,8 +1,8 @@
 <template>
 	<!-- TOP -->
-	<div class="flex flex-col gap-y-2">
+	<div class="space-y-2">
 		<h1 class="text-4xl">Titlu Postarii</h1>
-		<div class="flex flex-col gap-y-0.5 text-black/75">
+		<div class="space-y-0.5 text-black/75">
 			<div class="flex gap-x-1 items-center">
 				<UIcon
 					name="i-qlementine-icons:guitar-strat-16"
@@ -35,9 +35,9 @@
 	</div>
 
 	<!-- CONTENT -->
-	<div class="flex flex-col gap-y-4">
+	<div class="space-y-4">
 		<!-- Desc -->
-		<div class="flex flex-col gap-y-1">
+		<div class="space-y-1">
 			<h2 class="text-2xl">Descriere</h2>
 			<p class="font-secondary text-lg">
 				Lorem ipsum dolor sit amet consectetur. Etiam faucibus nulla
@@ -51,7 +51,7 @@
 		</div>
 
 		<!-- Socials -->
-		<div class="flex flex-col gap-y-1">
+		<div class="space-y-1">
 			<h2 class="text-2xl">Socials</h2>
 			<div class="flex gap-x-3">
 				<UIcon
