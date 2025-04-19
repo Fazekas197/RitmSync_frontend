@@ -16,5 +16,12 @@
 			</div>
 		</div>
 	</div>
-	<PostCard musician="true" />
+	<PostCard
+		musician="true"
+		title="Fazekas Cosmin"
+		loc="Iasi"
+		ins="Bass"
+		gen="Rock"
+		desc="Lorem ipsum dolor sit amet consectetur. Ornare placerat fringilla semper viverra tincidunt pulvinar et diam dignissim. Eget vitae quam nulla enim commodo. Vel massa ante nibh fringilla blandit nam."
+	/>
 </template>
