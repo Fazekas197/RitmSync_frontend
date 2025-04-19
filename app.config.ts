@@ -10,5 +10,19 @@ export default defineAppConfig({
 				active: { false: "text-black" },
 			},
 		},
+		formField: {
+			variants: {
+				size: {
+					md: {
+						root: "text-2xl",
+					},
+				},
+			},
+		},
+		input: {
+			slots: {
+				root: "w-full",
+			},
+		},
 	},
 });
