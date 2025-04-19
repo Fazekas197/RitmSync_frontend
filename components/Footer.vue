@@ -10,7 +10,7 @@
 			<UIcon name="i-pepicons-pencil-people" class="size-10" />
 		</ULink>
 
-		<ULink to="adauga">
+		<ULink to="/adauga">
 			<UIcon name="i-material-symbols-add-2-rounded" class="size-10" />
 		</ULink>
 	</footer>
