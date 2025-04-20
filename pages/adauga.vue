@@ -39,7 +39,7 @@
 			</UFormField>
 			<UFormField label="Descriere" required>
 				<UTextarea
-					class="w-full"
+					class="w-full font-secondary"
 					highlight
 					:rows="10"
 					v-model="state.desc"
