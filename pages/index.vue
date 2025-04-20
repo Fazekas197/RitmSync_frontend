@@ -2,18 +2,49 @@
 	<div class="space-y-2">
 		<h1 class="text-4xl">Colaborări</h1>
 		<div class="flex gap-x-2">
-			<div
-				class="flex items-center gap-x-1 border-2 rounded-xl border-primary px-3 py-1"
-			>
-				<UIcon name="i-mage:filter" class="size-7 -z-10" />
-				<h2 class="text-2xl">Filtrează</h2>
-			</div>
-			<div
-				class="flex items-center gap-x-1 border-2 rounded-xl border-primary px-3 py-1"
-			>
-				<UIcon name="i-flowbite:sort-outline" class="size-7 -z-10" />
-				<h2 class="text-2xl">Sortează</h2>
-			</div>
+			<UModal title="Filtrează">
+				<UButton
+					icon="i-mage:filter"
+					size="xl"
+					class="text-2xl text-black font-sans bg-transparent border-2 rounded-xl border-primary px-3 py-1"
+				>
+					Filtrează
+				</UButton>
+
+				<template #body>
+					<div class="text-xl space-y-2">
+						<UFormField label="Județ" class="w-full">
+							<USelectMenu highlight class="w-full" />
+						</UFormField>
+						<UFormField label="Instrumente" class="w-full">
+							<USelectMenu highlight class="w-full" />
+						</UFormField>
+						<UFormField label="Genuri Muzicale" class="w-full">
+							<USelectMenu highlight class="w-full" />
+						</UFormField>
+						<UButton class="text-lg mt-3">Filtrează</UButton>
+					</div>
+				</template>
+			</UModal>
+
+			<UModal title="Sortează">
+				<UButton
+					icon="i-flowbite:sort-outline"
+					size="xl"
+					class="text-2xl text-black font-sans bg-transparent border-2 rounded-xl border-primary px-3 py-1"
+				>
+					Sortează
+				</UButton>
+
+				<template #body>
+					<div class="text-xl space-y-2">
+						<UFormField label="Criteriu" class="w-full">
+							<USelectMenu highlight class="w-full" />
+						</UFormField>
+						<UButton class="text-lg mt-3">Sortează</UButton>
+					</div>
+				</template>
+			</UModal>
 		</div>
 	</div>
 	<PostCard
