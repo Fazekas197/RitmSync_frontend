@@ -43,6 +43,7 @@
 					highlight
 					:rows="10"
 					v-model="state.desc"
+					placeholder="Descrie proiectul tău și ce fel de muzician cauți"
 				/>
 			</UFormField>
 			<UFormField label="Telefon">
