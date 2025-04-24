@@ -8,7 +8,7 @@
 			<div class="flex gap-x-3">
 				<UFormField label="Județ" required class="w-full">
 					<USelectMenu
-						:items="items"
+						:items="Object.values(store.modCounties)"
 						highlight
 						class="w-full"
 						v-model="state.jud"
@@ -20,7 +20,7 @@
 					class="w-full max-w-1/2"
 				>
 					<USelectMenu
-						:items="items"
+						:items="Object.values(store.modInstruments)"
 						multiple
 						highlight
 						class="w-full"
@@ -30,7 +30,7 @@
 			</div>
 			<UFormField label="Genuri muzicale" required>
 				<USelectMenu
-					:items="items"
+					:items="Object.values(store.modGenres)"
 					multiple
 					highlight
 					class="w-full"
@@ -64,7 +64,7 @@
 </template>
 
 <script setup lang="ts">
-	const items = ref(["Backlog", "Todo", "In Progress", "Done"]);
+	const store = useStaticDataStore();
 
 	const social = ref("");
 	const state = ref({
