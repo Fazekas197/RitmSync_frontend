@@ -11,16 +11,32 @@
 		<template #body>
 			<div class="text-xl space-y-2">
 				<UFormField label="Județ" class="w-full">
-					<USelectMenu highlight class="w-full" />
+					<USelectMenu
+						highlight
+						class="w-full"
+						:items="Object.values(store.modCounties)"
+					/>
 				</UFormField>
 				<UFormField label="Instrumente" class="w-full">
-					<USelectMenu highlight class="w-full" />
+					<USelectMenu
+						highlight
+						class="w-full"
+						:items="Object.values(store.modInstruments)"
+					/>
 				</UFormField>
 				<UFormField label="Genuri Muzicale" class="w-full">
-					<USelectMenu highlight class="w-full" />
+					<USelectMenu
+						highlight
+						class="w-full"
+						:items="Object.values(store.modGenres)"
+					/>
 				</UFormField>
 				<UButton class="text-lg mt-3">Filtrează</UButton>
 			</div>
 		</template>
 	</UModal>
 </template>
+
+<script lang="ts" setup>
+	const store = useStaticDataStore();
+</script>
