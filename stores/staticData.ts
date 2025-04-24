@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useRuntimeConfig } from "#app";
 
 export const useStaticDataStore = defineStore("staticData", {
 	state: () => {
@@ -17,7 +18,11 @@ export const useStaticDataStore = defineStore("staticData", {
 	},
 	actions: {
 		async getData() {
-			this.staticData = await $fetch("http://localhost:5014/staticData");
+			const config = useRuntimeConfig();
+
+			this.staticData = await $fetch(
+				`${config.public.API_URL}/staticData`
+			);
 		},
 	},
 });

@@ -7,4 +7,9 @@ export default defineNuxtConfig({
 	ui: {
 		colorMode: false,
 	},
+	runtimeConfig: {
+		public: {
+			API_URL: process.env.API_URL,
+		},
+	},
 });
