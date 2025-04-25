@@ -48,26 +48,16 @@
 		<div class="space-y-1">
 			<h2 class="text-2xl">Socials</h2>
 			<div class="flex gap-x-3">
-				<UIcon
-					name="i-si:youtube-fill"
-					class="size-9 bg-gradient-to-br from-[#2e2e2e] to-[#121212]"
-				/>
-				<UIcon
-					name="i-ic:outline-facebook"
-					class="size-9 bg-gradient-to-br from-[#2e2e2e] to-[#121212]"
-				/>
-				<UIcon
-					name="i-mdi:spotify"
-					class="size-9 bg-gradient-to-br from-[#2e2e2e] to-[#121212]"
-				/>
-				<UIcon
-					name="i-mdi:instagram"
-					class="size-9 bg-gradient-to-br from-[#2e2e2e] to-[#121212]"
-				/>
-				<UIcon
-					name="i-ic:baseline-tiktok"
-					class="size-9 bg-gradient-to-br from-[#2e2e2e] to-[#121212]"
-				/>
+				<ULink
+					v-for="social in post?.socials"
+					:to="social.link"
+					target="_blank"
+				>
+					<UIcon
+						:name="availableSocials[social.platform]"
+						class="size-9 bg-gradient-to-br from-[#2e2e2e] to-[#121212]"
+					/>
+				</ULink>
 			</div>
 		</div>
 
@@ -100,6 +90,7 @@
 
 <script lang="ts" setup>
 	import type { Post } from "~/types/post";
+	import { availableSocials } from "~/types/social";
 
 	const store = usePostsStore();
 	const router = useRoute();

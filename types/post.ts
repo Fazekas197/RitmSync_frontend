@@ -1,3 +1,5 @@
+import type { Social } from "./social";
+
 export interface Post {
 	id: number;
 	user: string;
@@ -10,5 +12,5 @@ export interface Post {
 	createdAt: string;
 	genres: [];
 	instruments: [];
-	socials: [];
+	socials: Social[];
 }
