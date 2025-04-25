@@ -1,4 +1,5 @@
 import type { Social } from "./social";
+import type { Experience } from "./experience";
 
 export interface User {
 	id: number;
@@ -9,7 +10,7 @@ export interface User {
 	desc: string;
 	shortDesc: string;
 	county: string;
-	experience: [];
+	experience: Experience[];
 	genres: [];
 	instruments: [];
 	socials: Social[];
