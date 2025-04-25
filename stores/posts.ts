@@ -22,5 +22,9 @@ export const usePostsStore = defineStore("posts", {
 				date.getMonth() < 10 ? `0${date.getMonth()}` : date.getMonth();
 			return day + "." + month + "." + date.getFullYear();
 		},
+
+		getPostById(id: number) {
+			return this.posts.find((post) => post.id === id);
+		},
 	},
 });
