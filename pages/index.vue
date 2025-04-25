@@ -16,6 +16,7 @@
 		:author="post.user"
 		:date="postStore.formatDate(post.createdAt)"
 		:desc="post.shortDesc"
+		:id="post.id"
 	/>
 </template>
 
