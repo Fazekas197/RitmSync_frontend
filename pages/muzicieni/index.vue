@@ -6,12 +6,23 @@
 			<Sort />
 		</div>
 	</div>
-	<PostCard
-		musician="true"
-		title="Fazekas Cosmin"
-		loc="Iasi"
-		ins="Bass"
-		gen="Rock"
-		desc="Lorem ipsum dolor sit amet consectetur. Ornare placerat fringilla semper viverra tincidunt pulvinar et diam dignissim. Eget vitae quam nulla enim commodo. Vel massa ante nibh fringilla blandit nam."
-	/>
+
+	<div v-for="user in store.users">
+		<PostCard
+			v-if="user.openForCollab"
+			musician="true"
+			:title="user.fullName"
+			:loc="user.county"
+			:ins="user.instruments.join(', ')"
+			:gen="user.genres.join(', ')"
+			:desc="user.shortDesc"
+		/>
+	</div>
 </template>
+
+<script lang="ts" setup>
+	const store = useUsersStore();
+	await callOnce("users", () => store.getUsers());
+
+	console.log(store.users[0].openForCollab);
+</script>
