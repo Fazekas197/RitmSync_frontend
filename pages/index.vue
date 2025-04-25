@@ -14,7 +14,7 @@
 		:gen="post.genres.join(', ')"
 		:loc="post.county"
 		:author="post.user"
-		date="15.02.2025"
+		:date="formatDate(post.createdAt)"
 		:desc="post.shortDesc"
 	/>
 </template>
@@ -29,6 +29,7 @@
 		shortDesc: string;
 		phone: string;
 		email: string;
+		createdAt: string;
 		genres: [];
 		instruments: [];
 		socials: [];
@@ -36,4 +37,12 @@
 
 	const apiUrl = useRuntimeConfig().public.API_URL;
 	const posts = await useFetch<Post[]>(`${apiUrl}/posts`);
+
+	function formatDate(createdAt: string) {
+		const date = new Date(createdAt);
+		const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+		const month =
+			date.getMonth() < 10 ? `0${date.getMonth()}` : date.getMonth();
+		return day + "." + month + "." + date.getFullYear();
+	}
 </script>
