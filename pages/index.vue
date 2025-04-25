@@ -20,20 +20,7 @@
 </template>
 
 <script lang="ts" setup>
-	interface Post {
-		id: number;
-		user: string;
-		title: string;
-		county: string;
-		desc: string;
-		shortDesc: string;
-		phone: string;
-		email: string;
-		createdAt: string;
-		genres: [];
-		instruments: [];
-		socials: [];
-	}
+	import type { Post } from "@/types/post";
 
 	const apiUrl = useRuntimeConfig().public.API_URL;
 	const posts = await useFetch<Post[]>(`${apiUrl}/posts`);
