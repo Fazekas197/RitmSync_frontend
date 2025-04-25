@@ -99,7 +99,13 @@
 </template>
 
 <script lang="ts" setup>
+	import type { Post } from "~/types/post";
+
 	const store = usePostsStore();
 	const router = useRoute();
-	const post = store.getPostById(Number(router.params.id));
+	var post = store.getPostById(Number(router.params.id));
+
+	if (!post) {
+		post = (await store.fetchPostById(Number(router.params.id))) as Post;
+	}
 </script>

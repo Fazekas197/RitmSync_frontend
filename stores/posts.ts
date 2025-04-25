@@ -26,5 +26,11 @@ export const usePostsStore = defineStore("posts", {
 		getPostById(id: number) {
 			return this.posts.find((post) => post.id === id);
 		},
+
+		async fetchPostById(id: number) {
+			const config = useRuntimeConfig();
+			const post = await $fetch(`${config.public.API_URL}/posts/${id}`);
+			return post;
+		},
 	},
 });
