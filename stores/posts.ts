@@ -23,8 +23,12 @@ export const usePostsStore = defineStore("posts", {
 			return day + "." + month + "." + date.getFullYear();
 		},
 
-		getPostById(id: number) {
-			return this.posts.find((post) => post.id === id);
+		async getPostById(id: number) {
+			const post = this.posts.find((post) => post.id === id);
+			if (!post) {
+				return (await this.fetchPostById(id)) as Post;
+			}
+			return post;
 		},
 
 		async fetchPostById(id: number) {

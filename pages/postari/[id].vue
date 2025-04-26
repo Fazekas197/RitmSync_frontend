@@ -89,14 +89,9 @@
 </template>
 
 <script lang="ts" setup>
-	import type { Post } from "~/types/post";
 	import { availableSocials } from "~/types/social";
 
 	const store = usePostsStore();
 	const router = useRoute();
-	var post = store.getPostById(Number(router.params.id));
-
-	if (!post) {
-		post = (await store.fetchPostById(Number(router.params.id))) as Post;
-	}
+	var post = await store.getPostById(Number(router.params.id));
 </script>
