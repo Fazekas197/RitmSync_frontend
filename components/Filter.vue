@@ -21,6 +21,7 @@
 					<USelectMenu
 						highlight
 						class="w-full"
+						multiple
 						:items="Object.values(store.modInstruments)"
 					/>
 				</UFormField>
@@ -28,6 +29,7 @@
 					<USelectMenu
 						highlight
 						class="w-full"
+						multiple
 						:items="Object.values(store.modGenres)"
 					/>
 				</UFormField>
