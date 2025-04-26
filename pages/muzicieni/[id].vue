@@ -110,7 +110,19 @@
 		</template>
 
 		<template #postari>
-			<div class="space-y-4"></div>
+			<div class="space-y-4">
+				<PostCard
+					v-for="post in userPosts"
+					:title="post.title"
+					:ins="post.instruments.join(', ')"
+					:gen="post.genres.join(', ')"
+					:loc="post.county"
+					:author="post.user"
+					:date="formatDate(post.createdAt)"
+					:desc="post.shortDesc"
+					:id="post.id"
+				/>
+			</div>
 		</template>
 	</UTabs>
 </template>
@@ -119,10 +131,16 @@
 	import { availableSocials } from "~/types/social";
 	import type { User } from "~/types/user";
 	import type { TabsItem } from "@nuxt/ui";
+	import type { Post } from "~/types/post";
 
 	const store = useUsersStore();
+	const postStore = usePostsStore();
 	const router = useRoute();
+
 	var user = (await store.getUserById(Number(router.params.id))) as User;
+	var userPosts = (await postStore.getPostsByUserId(
+		Number(router.params.id)
+	)) as Post[];
 
 	function getExperience(start: Date, end: Date) {
 		if (!end) return `${formatDate(start)} - prezent`;
