@@ -60,7 +60,11 @@
 		<UButton v-if="!musician" :to="`/postari/${id}`" class="w-fit" size="xl"
 			>Mai multe</UButton
 		>
-		<UButton v-if="musician" to="/muzicieni/test" class="w-fit" size="xl"
+		<UButton
+			v-if="musician"
+			:to="`/muzicieni/${id}`"
+			class="w-fit"
+			size="xl"
 			>Mai multe</UButton
 		>
 	</div>

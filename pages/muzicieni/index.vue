@@ -16,6 +16,7 @@
 			:ins="user.instruments.join(', ')"
 			:gen="user.genres.join(', ')"
 			:desc="user.shortDesc"
+			:id="user.id"
 		/>
 	</div>
 </template>
@@ -23,6 +24,4 @@
 <script lang="ts" setup>
 	const store = useUsersStore();
 	await callOnce("users", () => store.getUsers());
-
-	console.log(store.users[0].openForCollab);
 </script>
