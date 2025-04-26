@@ -26,12 +26,12 @@ export const usePostsStore = defineStore("posts", {
 		},
 
 		async getPostsByUserId(userId: number) {
-			const posts = this.posts.find((post) => post.userId === userId);
-			if (!posts) {
+			const posts = this.posts.filter((post) => post.userId === userId);
+			if (posts.length === 0) {
 				const config = useRuntimeConfig();
-				return await $fetch(
+				return (await $fetch(
 					`${config.public.API_URL}/posts/users/${userId}`
-				);
+				)) as Post[];
 			}
 			return posts;
 		},
