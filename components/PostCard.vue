@@ -7,7 +7,7 @@
 			<h2 class="text-2xl">{{ title }}</h2>
 			<!-- DETAILS -->
 			<!-- Instrument, Gen -->
-			<div class="flex gap-x-2 items-center text-white/75 text-sm">
+			<div class="space-y-1 text-white/75 text-sm">
 				<div v-if="musician" class="flex items-center">
 					<UIcon
 						name="i-material-symbols-light:location-on"
@@ -15,16 +15,18 @@
 					/>
 					<h4 class="">{{ loc }}</h4>
 				</div>
-				<div class="flex gap-x-0.5 items-center">
-					<UIcon
-						name="i-qlementine-icons:guitar-strat-16"
-						class="size-5"
-					/>
-					<h4>{{ ins }}</h4>
-				</div>
-				<div class="flex gap-x-1 items-center">
-					<UIcon name="i-majesticons:music" class="size-5" />
-					<h4>{{ gen }}</h4>
+				<div class="flex gap-x-2">
+					<div class="flex gap-x-0.5 items-center">
+						<UIcon
+							name="i-qlementine-icons:guitar-strat-16"
+							class="size-5"
+						/>
+						<h4>{{ ins }}</h4>
+					</div>
+					<div class="flex gap-x-1 items-center">
+						<UIcon name="i-majesticons:music" class="size-5" />
+						<h4>{{ gen }}</h4>
+					</div>
 				</div>
 			</div>
 
