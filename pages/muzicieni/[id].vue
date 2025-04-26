@@ -72,11 +72,13 @@
 	<!-- EXPERIENTA -->
 	<div>
 		<h2 class="text-2xl pb-1">Experiență</h2>
-		<div v-for="exp in user.experience" class="font-secondary">
-			<h3 class="text-lg">{{ exp.projectName }}</h3>
-			<p class="text-sm">
-				{{ getExperience(exp.start, exp.end) }}
-			</p>
+		<div class="space-y-1.5">
+			<div v-for="exp in user.experience" class="font-secondary">
+				<h3 class="text-lg">{{ exp.projectName }}</h3>
+				<p class="text-sm">
+					{{ getExperience(exp.start, exp.end) }}
+				</p>
+			</div>
 		</div>
 	</div>
 
