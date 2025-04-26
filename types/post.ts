@@ -3,6 +3,7 @@ import type { Social } from "./social";
 export interface Post {
 	id: number;
 	user: string;
+	userId: number;
 	title: string;
 	county: string;
 	desc: string;
