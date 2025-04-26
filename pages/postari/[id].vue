@@ -28,7 +28,7 @@
 				</div>
 				<div class="flex gap-x-1 items-center">
 					<UIcon name="i-clarity:date-solid" class="size-5" />
-					<h4>{{ store.formatDate(post?.createdAt || "") }}</h4>
+					<h4>{{ formatDate(post?.createdAt) }}</h4>
 				</div>
 			</div>
 		</div>

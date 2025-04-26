@@ -14,7 +14,7 @@
 		:gen="post.genres.join(', ')"
 		:loc="post.county"
 		:author="post.user"
-		:date="postStore.formatDate(post.createdAt)"
+		:date="formatDate(post.createdAt)"
 		:desc="post.shortDesc"
 		:id="post.id"
 	/>

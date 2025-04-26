@@ -14,15 +14,6 @@ export const usePostsStore = defineStore("posts", {
 			this.posts = await $fetch(`${config.public.API_URL}/posts`);
 		},
 
-		formatDate(createdAt: string) {
-			const date = new Date(createdAt);
-			const day =
-				date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
-			const month =
-				date.getMonth() < 10 ? `0${date.getMonth()}` : date.getMonth();
-			return day + "." + month + "." + date.getFullYear();
-		},
-
 		async getPostById(id: number) {
 			const post = this.posts.find((post) => post.id === id);
 			if (!post) {
