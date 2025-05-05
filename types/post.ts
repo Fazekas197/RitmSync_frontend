@@ -15,3 +15,15 @@ export interface Post {
 	instruments: [];
 	socials: Social[];
 }
+
+export interface PostForm {
+	userId: number;
+	title: string;
+	county: number;
+	insturments: number[];
+	genres: number[];
+	desc: string;
+	phone: string;
+	email: string;
+	socials: Social[];
+}
