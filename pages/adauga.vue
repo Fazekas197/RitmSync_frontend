@@ -89,7 +89,8 @@
 	});
 
 	function addSocial(): void {
-		var addSocial = { link: social.value, platform: "tiktok" } as Social;
+		const platform = getSocialPlatform(social.value);
+		var addSocial = { link: social.value, platform: platform } as Social;
 		state.value.socials.push(addSocial);
 		social.value = "";
 	}
