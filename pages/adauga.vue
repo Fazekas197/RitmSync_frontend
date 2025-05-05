@@ -11,7 +11,8 @@
 						:items="Object.values(store.modCounties)"
 						highlight
 						class="w-full"
-						v-model="state.jud"
+						value-key="id"
+						v-model="state.county"
 					/>
 				</UFormField>
 				<UFormField
@@ -24,6 +25,7 @@
 						multiple
 						highlight
 						class="w-full"
+						value-key="id"
 						v-model="state.instruments"
 					/>
 				</UFormField>
@@ -34,6 +36,7 @@
 					multiple
 					highlight
 					class="w-full"
+					value-key="id"
 					v-model="state.genres"
 				/>
 			</UFormField>
@@ -67,22 +70,27 @@
 </template>
 
 <script setup lang="ts">
+	import type { PostForm } from "~/types/post";
+	import type { Social } from "~/types/social";
+
 	const store = useStaticDataStore();
 
 	const social = ref("");
-	const state = ref({
+	const state = ref<PostForm>({
+		userId: 0,
 		title: "",
-		jud: "",
+		county: 0,
 		instruments: [],
 		genres: [],
 		desc: "",
 		phone: "",
 		email: "",
-		socials: [] as string[],
+		socials: [],
 	});
 
 	function addSocial(): void {
-		state.value.socials.push(social.value);
+		var addSocial = { link: social.value, platform: "tiktok" } as Social;
+		state.value.socials.push(addSocial);
 		social.value = "";
 	}
 
