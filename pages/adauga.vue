@@ -55,7 +55,7 @@
 			<UFormField label="Email" name="email">
 				<UInput highlight v-model="state.email" />
 			</UFormField>
-			<UFormField label="Socials" :error="err">
+			<UFormField label="Socials" :error="err" :ui="{ error: 'text-sm' }">
 				<div class="flex justify-between gap-6">
 					<UInput highlight v-model="social" />
 					<UButton size="lg" @click="addSocial">Adaugă</UButton>
