@@ -61,7 +61,9 @@
 					<UButton size="lg" @click="addSocial">Adaugă</UButton>
 				</div>
 				<div class="text-sm font-secondary">
-					<p v-for="social in state.socials">{{ social }}</p>
+					<p v-for="social in state.socials">
+						{{ social.platform }}: {{ social.link }}
+					</p>
 				</div>
 			</UFormField>
 			<UButton type="submit" class="text-xl"> Crează </UButton>
