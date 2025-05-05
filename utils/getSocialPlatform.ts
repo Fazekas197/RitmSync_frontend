@@ -1,14 +1,19 @@
 import { availableSocials } from "~/types/social";
 
 export default function (link: string): string | null {
-	const url = new URL(link);
-	const hostname = url.hostname.toLowerCase();
+	try {
+		const url = new URL(link);
+		const hostname = url.hostname.toLowerCase();
 
-	for (const platform in availableSocials) {
-		if (hostname.includes(platform)) {
-			return platform;
+		for (const platform in availableSocials) {
+			if (hostname.includes(platform)) {
+				return platform;
+			}
 		}
-	}
 
-	return null;
+		return null;
+	} catch (error) {
+		console.error("Error parsing URL:", error);
+		return null;
+	}
 }

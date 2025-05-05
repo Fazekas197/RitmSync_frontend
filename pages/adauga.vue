@@ -55,7 +55,7 @@
 			<UFormField label="Email" name="email">
 				<UInput highlight v-model="state.email" />
 			</UFormField>
-			<UFormField label="Socials">
+			<UFormField label="Socials" :error="err">
 				<div class="flex justify-between gap-6">
 					<UInput highlight v-model="social" />
 					<UButton size="lg" @click="addSocial">Adaugă</UButton>
@@ -90,8 +90,16 @@
 		socials: [],
 	});
 
+	const err = ref("");
 	function addSocial(): void {
+		err.value = "";
 		const platform = getSocialPlatform(social.value);
+		if (platform == null) {
+			err.value =
+				"Please enter a link from youtube, tiktok, facebook, spotify or instagram";
+			return;
+		}
+
 		var addSocial = { link: social.value, platform: platform } as Social;
 		state.value.socials.push(addSocial);
 		social.value = "";
