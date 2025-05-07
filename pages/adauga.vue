@@ -12,7 +12,7 @@
 						highlight
 						class="w-full"
 						value-key="id"
-						v-model="state.county"
+						v-model="state.countyId"
 					/>
 				</UFormField>
 				<UFormField
@@ -74,14 +74,16 @@
 <script setup lang="ts">
 	import type { PostForm } from "~/types/post";
 	import type { Social } from "~/types/social";
+	const config = useRuntimeConfig();
 
 	const store = useStaticDataStore();
+	const postStore = usePostsStore();
 
 	const social = ref("");
 	const state = ref<PostForm>({
-		userId: 0,
+		userId: 1,
 		title: "",
-		county: 0,
+		countyId: 0,
 		instruments: [],
 		genres: [],
 		desc: "",
@@ -105,7 +107,12 @@
 		social.value = "";
 	}
 
-	function submit(): void {
-		console.log(state.value);
+	async function submit() {
+		await useFetch(`${config.public.API_URL}/posts`, {
+			method: "POST",
+			body: state.value,
+		});
+		navigateTo("/");
+		await postStore.getPosts();
 	}
 </script>

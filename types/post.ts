@@ -19,7 +19,7 @@ export interface Post {
 export interface PostForm {
 	userId: number;
 	title: string;
-	county: number;
+	countyId: number;
 	instruments: number[];
 	genres: number[];
 	desc: string;
