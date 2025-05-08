@@ -21,11 +21,11 @@
 							name="i-qlementine-icons:guitar-strat-16"
 							class="size-5"
 						/>
-						<h4>{{ ins }}</h4>
+						<h4>{{ showArr(ins) }}</h4>
 					</div>
 					<div class="flex gap-x-1 items-center">
 						<UIcon name="i-majesticons:music" class="size-5" />
-						<h4>{{ gen }}</h4>
+						<h4>{{ showArr(gen) }}</h4>
 					</div>
 				</div>
 			</div>
@@ -43,10 +43,13 @@
 					<UIcon name="i-material-symbols-person" class="size-5" />
 					<h4>{{ author }}</h4>
 				</div>
-				<div class="flex gap-x-1 items-center">
-					<UIcon name="i-clarity:date-solid" class="size-5" />
-					<h4>{{ date }}</h4>
-				</div>
+			</div>
+			<div
+				v-if="!musician"
+				class="flex gap-x-1 items-center text-white/75 text-sm"
+			>
+				<UIcon name="i-clarity:date-solid" class="size-5" />
+				<h4>{{ date }}</h4>
 			</div>
 		</div>
 
@@ -82,4 +85,11 @@
 		"desc",
 		"id",
 	]);
+
+	function showArr(arr: Array<string>) {
+		if (arr.length > 2) {
+			return `${arr[0]}, ${arr[1]} + ${arr.length - 2}`;
+		}
+		return arr.join(", ");
+	}
 </script>

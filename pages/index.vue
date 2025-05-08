@@ -10,8 +10,8 @@
 	<PostCard
 		v-for="post in postStore.posts"
 		:title="post.title"
-		:ins="post.instruments.join(', ')"
-		:gen="post.genres.join(', ')"
+		:ins="post.instruments"
+		:gen="post.genres"
 		:loc="post.county"
 		:author="post.user"
 		:date="formatDate(post.createdAt)"

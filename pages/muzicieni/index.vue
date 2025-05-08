@@ -13,8 +13,8 @@
 			musician="true"
 			:title="user.fullName"
 			:loc="user.county"
-			:ins="user.instruments.join(', ')"
-			:gen="user.genres.join(', ')"
+			:ins="user.instruments"
+			:gen="user.genres"
 			:desc="user.shortDesc"
 			:id="user.id"
 		/>
