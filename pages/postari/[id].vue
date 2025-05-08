@@ -1,7 +1,16 @@
 <template>
 	<!-- TOP -->
 	<div class="space-y-2">
-		<h1 class="text-4xl">{{ post?.title }}</h1>
+		<div class="flex justify-between items-center">
+			<h1 class="text-4xl">{{ post?.title }}</h1>
+			<div>
+				<UIcon
+					name="material-symbols:delete"
+					class="size-12"
+					@click="deletePost"
+				/>
+			</div>
+		</div>
 		<div class="space-y-0.5 text-black/75">
 			<div class="flex gap-x-1 items-center">
 				<UIcon
@@ -90,8 +99,17 @@
 
 <script lang="ts" setup>
 	import { availableSocials } from "~/types/social";
+	const config = useRuntimeConfig();
 
 	const store = usePostsStore();
 	const router = useRoute();
 	var post = await store.getPostById(Number(router.params.id));
+
+	async function deletePost() {
+		await useFetch(`${config.public.API_URL}/posts/${router.params.id}`, {
+			method: "DELETE",
+		});
+		navigateTo("/");
+		await store.getPosts();
+	}
 </script>
