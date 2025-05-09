@@ -1,12 +1,17 @@
 <template>
 	<!-- TOP -->
 	<div class="space-y-2">
-		<div class="flex justify-between items-center">
+		<div class="flex justify-between items-center space-x-4">
 			<h1 class="text-4xl">{{ post?.title }}</h1>
-			<div>
+			<div class="flex items-center space-x-2">
+				<UIcon
+					name="iconamoon:edit-fill"
+					class="size-12 bg-gradient-to-br from-[#2e2e2e] to-[#121212]"
+					@click=""
+				/>
 				<UIcon
 					name="material-symbols:delete"
-					class="size-12"
+					class="size-12 bg-gradient-to-br from-[#2e2e2e] to-[#121212]"
 					@click="deletePost"
 				/>
 			</div>
