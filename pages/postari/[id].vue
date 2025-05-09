@@ -38,7 +38,9 @@
 				</div>
 				<div class="flex gap-x-1 items-center">
 					<UIcon name="i-material-symbols-person" class="size-5" />
-					<h4>{{ post?.user }}</h4>
+					<NuxtLink :to="`/muzicieni/${post.userId}`">
+						{{ post?.user }}
+					</NuxtLink>
 				</div>
 				<div class="flex gap-x-1 items-center">
 					<UIcon name="i-clarity:date-solid" class="size-5" />
